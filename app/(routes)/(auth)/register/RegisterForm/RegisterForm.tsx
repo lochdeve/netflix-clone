@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-// import axios from 'axios';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -14,8 +14,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-// import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { formSchema } from './RegisterForm.form';
 
 export function RegisterForm() {
@@ -31,19 +31,14 @@ export function RegisterForm() {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    // try {
-    //   await axios.post('/api/auth/register', values);
-    //   toast({
-    //     title: 'El usuario se ha registrado correctamente',
-    //   });
-    //   router.push('/profiles');
-    // } catch (error) {
-    //   console.log(error);
-    //   toast({
-    //     title: 'Ha ocurrido un error al registrar el usuario',
-    //     variant: 'destructive',
-    //   });
-    // }
+    try {
+      await axios.post('/api/auth/register', values);
+      toast.success('El usuario se ha registrado correctamente');
+      router.push('/profiles');
+    } catch (error) {
+      console.log(error);
+      toast.error('Ha ocurrido un error al registrar el usuario');
+    }
   };
 
   return (

@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { login } from '@/actions/login';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -15,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { toast } from 'sonner';
 import { FormError } from './FormError/FormError';
 import { formSchema } from './LoginForm.form';
 
@@ -33,16 +35,13 @@ export function LoginForm() {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      // login(values).then((data) => {
-      //   setError(data?.error);
-      //   if (data?.success) {
-      //     toast({
-      //       title: 'Login se ha realizado con éxito',
-      //     });
-      //   }
-      // });
-      console.log(values);
-      // router.push('/profiles');
+      login(values).then((data) => {
+        setError(data?.error);
+        if (data?.success) {
+          toast.success('Login se ha realizado con éxito');
+        }
+      });
+      router.push('/profiles');
     } catch (error) {
       console.log(error);
     }
