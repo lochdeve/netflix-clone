@@ -7,7 +7,7 @@ export function FormError(props: FormErrorProps) {
   if (!message) return null;
 
   return (
-    <div className='bg-destructive/50 p-3 rounded-md flex items-center gap-x-2 text-sm text-white'>
+    <div className='bg-red-500/50 p-3 rounded-md flex items-center gap-x-2 text-sm text-white'>
       <TriangleAlert />
       <p>{message}</p>
     </div>
