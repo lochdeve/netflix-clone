@@ -17,7 +17,7 @@ import { Input } from '@/components/ui/input';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { FormError } from './FormError/FormError';
+import { FormError } from './FormError';
 import { formSchema } from './LoginForm.form';
 
 export function LoginForm() {

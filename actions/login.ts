@@ -18,10 +18,11 @@ export const login = async (values: z.infer<typeof signInSchema>) => {
     await signIn('credentials', {
       email,
       password,
-      redirectTo: '/profiles',
+      redirect: false,
     });
     return { success: true };
   } catch (error) {
+    console.error('Login error:', error);
     if (error instanceof AuthError) {
       switch (error.type) {
         case 'CredentialsSignin':
@@ -31,5 +32,6 @@ export const login = async (values: z.infer<typeof signInSchema>) => {
           return { error: 'Something went wrong!' };
       }
     }
+    return { error: 'An unexpected error occurred' };
   }
 };

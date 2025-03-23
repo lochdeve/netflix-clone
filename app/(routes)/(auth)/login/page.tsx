@@ -1,16 +1,12 @@
-import { auth } from '@/auth';
 import { Checkbox } from '@/components/ui/checkbox';
 import Link from 'next/link';
 import { LoginForm } from './LoginForm/LoginForm';
 import Terms from './Terms/Terms';
 
 const LoginPage = async () => {
-  const session = await auth();
-
   return (
     <div className=''>
       <p className='text-3xl font-bold text-left mb-7'>Iniciar sesión</p>
-      <p>Session: {JSON.stringify(session)}</p>
 
       <LoginForm />
       <div className='mt-5 text-center'>

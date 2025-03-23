@@ -20,10 +20,10 @@ export function middleware(request: NextRequest) {
   const isPublicPath = publicPaths.includes(path);
 
   // Verificar si estamos intentando acceder a una ruta protegida sin estar autenticados
-  if (!authCookie && !isPublicPath) {
-    // Redirigir al login
-    return NextResponse.redirect(new URL('/login', request.url));
-  }
+  // if (!authCookie && !isPublicPath) {
+  //   // Redirigir al login
+  //   return NextResponse.redirect(new URL('/login', request.url));
+  // }
 
   // Verificar si estamos intentando acceder a una ruta de autenticación estando ya autenticados
   if (authCookie && isPublicPath) {
