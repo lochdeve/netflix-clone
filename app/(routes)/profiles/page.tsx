@@ -5,6 +5,7 @@ import { Profiles } from './components/Profiles';
 
 export default async function ProfilePage() {
   const session = await auth();
+  console.log({ session });
 
   if (!session?.user) {
     redirect('/login');

@@ -5,11 +5,17 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { itemsNavbar } from '@/data/itemsNavbar';
+import { UserNetflix } from '@prisma/client';
 import { BellRing, Menu, Search } from 'lucide-react';
 import Link from 'next/link';
 import Logo from '../../Logo/Logo';
+import SelectorProfile from '../SelectorProfile';
 
-const NavbarMobile = () => {
+type NavbarMobileProps = {
+  users: UserNetflix[];
+};
+
+const NavbarMobile = ({ users }: NavbarMobileProps) => {
   return (
     <div className='p-4 flex justify-between'>
       <Logo />
@@ -37,7 +43,7 @@ const NavbarMobile = () => {
           <div className='flex justify-between gap-6 mt-2 mx-6'>
             <Search className='cursor-pointer' />
             <BellRing className='cursor-pointer' />
-            <p>user</p>
+            <SelectorProfile users={users} />
           </div>
         </SheetContent>
       </Sheet>

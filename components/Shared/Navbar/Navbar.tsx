@@ -1,13 +1,19 @@
+import { UserNetflix } from '@prisma/client';
 import NavbarDesktop from './NavbarDesktop/NavbarDesktop';
 import NavbarMobile from './NavbarMobile/NavbarMobile';
-const Navbar = () => {
+
+type NavbarProps = {
+  users: UserNetflix[];
+};
+
+const Navbar = ({ users }: NavbarProps) => {
   return (
     <nav>
       <div className='hidden mx-auto md:block'>
-        <NavbarDesktop />
+        <NavbarDesktop users={users} />
       </div>
       <div className='md:hidden'>
-        <NavbarMobile />
+        <NavbarMobile users={users} />
       </div>
     </nav>
   );

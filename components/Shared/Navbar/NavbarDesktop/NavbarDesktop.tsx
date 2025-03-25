@@ -7,12 +7,16 @@ import { BellRing, Search } from 'lucide-react';
 import Logo from '@/components/Shared/Logo/Logo';
 import { itemsNavbar } from '@/data/itemsNavbar';
 import useScrollPosition from '@/hooks/useScrollPosition';
+import { UserNetflix } from '@prisma/client';
 import Link from 'next/link';
+import SelectorProfile from '../SelectorProfile';
 
-const NavbarDesktop = () => {
+type NavbarDesktopProps = {
+  users: UserNetflix[];
+};
+
+const NavbarDesktop = ({ users }: NavbarDesktopProps) => {
   const { scrollPosition } = useScrollPosition();
-
-  console.log(scrollPosition);
 
   return (
     <div
@@ -41,7 +45,7 @@ const NavbarDesktop = () => {
             <Search className='cursor-pointer' />
             <BellRing className='cursor-pointer' />
             <div className='flex gap-2 items-center'>
-              <p>user</p>
+              <SelectorProfile users={users} />
             </div>
           </div>
         </div>
