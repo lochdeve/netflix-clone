@@ -1,4 +1,9 @@
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { itemsNavbar } from '@/data/itemsNavbar';
 import { BellRing, Menu, Search } from 'lucide-react';
 import Link from 'next/link';
@@ -14,6 +19,9 @@ const NavbarMobile = () => {
           <Menu />
         </SheetTrigger>
         <SheetContent side='left' className='bg-black'>
+          <SheetTitle className='flex justify-center p-2'>
+            <Logo />
+          </SheetTitle>
           <div className='flex flex-col gap-4 pt-6 px-6'>
             {itemsNavbar.map((item) => (
               <Link
