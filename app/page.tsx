@@ -3,6 +3,7 @@ import Navbar from '@/components/Shared/Navbar/Navbar';
 import { db } from '@/lib/db';
 import { redirect } from 'next/navigation';
 import SliderVideo from './(home)/components/SliderVideo/SliderVideo';
+import TrendingMovies from './(home)/components/TrendingMovies';
 
 export default async function Home() {
   const session = await auth();
@@ -29,6 +30,7 @@ export default async function Home() {
     <div className='relative bg-zinc-900'>
       <Navbar users={usersNetflix} />
       <SliderVideo />
+      <TrendingMovies movies={trendingMovies} />
     </div>
   );
 }
