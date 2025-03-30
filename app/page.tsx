@@ -2,6 +2,7 @@ import { auth } from '@/auth';
 import Navbar from '@/components/Shared/Navbar/Navbar';
 import { db } from '@/lib/db';
 import { redirect } from 'next/navigation';
+import { ListMovies } from './(home)/components/ListMovies';
 import SliderVideo from './(home)/components/SliderVideo/SliderVideo';
 import TrendingMovies from './(home)/components/TrendingMovies';
 
@@ -31,6 +32,7 @@ export default async function Home() {
       <Navbar users={usersNetflix} />
       <SliderVideo />
       <TrendingMovies movies={trendingMovies} />
+      <ListMovies movies={movies} />
     </div>
   );
 }
