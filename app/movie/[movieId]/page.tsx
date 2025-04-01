@@ -3,14 +3,15 @@ import { redirect } from 'next/navigation';
 import { MovieVideo } from './components/MovieVideo';
 import { NavbarFilm } from './components/NavbarFilm';
 
-export default async function MovieIdPage({
-  params,
-}: {
-  params: { movieId: string };
-}) {
-  // Esperamos correctamente el objeto params completo antes de acceder a sus propiedades
-  const resolvedParams = await params;
-  const movieId = resolvedParams.movieId;
+interface PageProps {
+  params: {
+    movieId: string;
+  };
+}
+
+export default async function MovieIdPage({ params }: PageProps) {
+  const { movieId } = params;
+  console.log({ movieId });
 
   const movieFilm = await db.movie.findUnique({
     where: {
