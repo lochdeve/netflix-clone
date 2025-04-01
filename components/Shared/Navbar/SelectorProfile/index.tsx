@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useCurrentNetflixUser } from '@/hooks/use-current-user';
-import { UserNetflix } from '@prisma/client';
+import { UserNetflix } from '@/prisma/types';
 import { ChevronDown, LogOut, Pencil } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';

@@ -7,7 +7,7 @@ import { BellRing, Search } from 'lucide-react';
 import Logo from '@/components/Shared/Logo/Logo';
 import { itemsNavbar } from '@/data/itemsNavbar';
 import useScrollPosition from '@/hooks/useScrollPosition';
-import { UserNetflix } from '@prisma/client';
+import { UserNetflix } from '@/prisma/types';
 import Link from 'next/link';
 import SelectorProfile from '../SelectorProfile';
 

@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import ActionsButtonsFilm from '@/components/Shared/ActionsButtonsFilm';
 import { ChaptersInfo } from '@/components/Shared/ChaptersInfo';
 import { FilmGenres } from '@/components/Shared/FilmGenres';
-import { PopularMovie } from '@prisma/client';
+import { PopularMovie } from '@/prisma/types';
 
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 

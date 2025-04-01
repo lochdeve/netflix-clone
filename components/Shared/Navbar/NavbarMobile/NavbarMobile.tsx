@@ -5,7 +5,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { itemsNavbar } from '@/data/itemsNavbar';
-import { UserNetflix } from '@prisma/client';
+import { UserNetflix } from '@/prisma/types';
 import { BellRing, Menu, Search } from 'lucide-react';
 import Link from 'next/link';
 import Logo from '../../Logo/Logo';

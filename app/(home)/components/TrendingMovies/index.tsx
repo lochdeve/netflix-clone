@@ -1,4 +1,4 @@
-import { PopularMovie } from '@prisma/client';
+import { PopularMovie } from '@/prisma/types';
 import Image from 'next/image';
 import { InfoExtraFilm } from './InfoExtraFilm';
 // import { InfoExtraFilm } from './InfoExtraFilm';

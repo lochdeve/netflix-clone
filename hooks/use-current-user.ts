@@ -1,4 +1,4 @@
-import { UserNetflix } from '@prisma/client';
+import { UserNetflix } from '@/prisma/types';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 

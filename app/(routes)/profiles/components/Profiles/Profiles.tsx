@@ -18,7 +18,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useCurrentNetflixUser } from '@/hooks/use-current-user';
-import { UserNetflix } from '@prisma/client';
+import { UserNetflix } from '@/prisma/types';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { AddProfile } from './AddProfile/AddProfile';

@@ -1,4 +1,4 @@
-import { UserNetflix } from '@prisma/client';
+import { UserNetflix } from '@/prisma/types';
 import NavbarDesktop from './NavbarDesktop/NavbarDesktop';
 import NavbarMobile from './NavbarMobile/NavbarMobile';
 
