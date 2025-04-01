@@ -1,3 +1,5 @@
+@import 'tailwindcss/preflight';
+@tailwind utilities;
 @import 'tailwindcss';
 
 html,
@@ -50,13 +52,61 @@ body,
 :root {
   --background: #171717;
   --foreground: #fff;
+
+  --card: #252525;
+  --card-foreground: #fff;
+
+  --popover: #202020;
+  --popover-foreground: #fff;
+
+  --primary: #e50914;
+  --primary-foreground: #fff;
+
+  --secondary: #404040;
+  --secondary-foreground: #fff;
+
+  --muted: #303030;
+  --muted-foreground: #a0a0a0;
+
+  --accent: #e50914;
+  --accent-foreground: #fff;
+
+  --destructive: #ff0000;
+  --destructive-foreground: #fff;
+
+  --border: #3a3a3a;
+  --input: #303030;
+  --ring: #e50914;
+
+  --radius: 0.5rem;
+  --radius-sm: 0.3rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: #3a3a3a;
   }
   body {
-    @apply bg-background text-white;
+    background-color: #171717;
+    color: white;
+  }
+}
+
+@layer utilities {
+  .rounded-custom {
+    border-radius: 0.5rem;
+  }
+
+  /* Ocultar la barra de desplazamiento para todos los navegadores */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
