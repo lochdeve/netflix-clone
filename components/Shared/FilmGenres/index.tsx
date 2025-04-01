@@ -1,4 +1,6 @@
-import { FilmGenresProps } from './FilmGenres.types';
+type FilmGenresProps = {
+  genres: string[];
+};
 
 export function FilmGenres(props: FilmGenresProps) {
   const { genres } = props;
