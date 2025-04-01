@@ -4,7 +4,7 @@ import { BlockMovies } from '@/components/Shared/BlockMovies';
 import { useCurrentNetflixUser } from '@/hooks/use-current-user';
 import { useLovedFilms } from '@/hooks/useLovedFilms';
 
-import { Movie } from '@prisma/client';
+import { Movie } from '@/prisma/types';
 
 type ListMoviesProps = {
   movies: Movie[];

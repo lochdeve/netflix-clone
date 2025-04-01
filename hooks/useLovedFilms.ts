@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-import { Movie } from '@prisma/client';
+import { Movie } from '@/prisma/types';
 import { toast } from 'sonner';
 import { useCurrentNetflixUser } from './use-current-user';
 

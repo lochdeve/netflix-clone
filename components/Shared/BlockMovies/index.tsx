@@ -1,4 +1,4 @@
-import { Movie } from '@prisma/client';
+import { Movie } from '@/prisma/types';
 import { CarouselMovie } from './CarouselMovie';
 
 type BlockMoviesProps = {

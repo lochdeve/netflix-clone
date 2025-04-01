@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
-import { Movie } from '@prisma/client';
+import { Movie } from '@/prisma/types';
 import { FilmGenres } from '../../FilmGenres';
 import { useCarousel } from '../../hooks/useCarousel';
 import { ActionsButtons } from './ActionsButtons';

@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { useLovedFilms } from '@/hooks/useLovedFilms';
-import { Movie } from '@prisma/client';
+import { Movie } from '@/prisma/types';
 
 import { ChevronDown, Play, ThumbsUp, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
