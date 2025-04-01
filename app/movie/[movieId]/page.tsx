@@ -4,14 +4,11 @@ import { MovieVideo } from './components/MovieVideo';
 import { NavbarFilm } from './components/NavbarFilm';
 
 interface PageProps {
-  params: {
-    movieId: string;
-  };
+  params: Promise<{ movieId: string }>;
 }
 
 export default async function MovieIdPage({ params }: PageProps) {
-  const { movieId } = params;
-  console.log({ movieId });
+  const { movieId } = await params;
 
   const movieFilm = await db.movie.findUnique({
     where: {
