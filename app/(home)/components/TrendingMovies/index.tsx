@@ -9,7 +9,6 @@ type TrendingMoviesProps = {
 
 const TrendingMovies = (props: TrendingMoviesProps) => {
   const { movies } = props;
-  console.log(movies);
 
   return (
     <div className='pt-11 pb-18 lg:pb-0 lg:pt-0  md:-top-24 lg:-top-28 relative px-[4%]'>
@@ -22,11 +21,11 @@ const TrendingMovies = (props: TrendingMoviesProps) => {
           {movies.map((movie) => (
             <div
               key={movie.id}
-              className='cursor-pointer transition delay-300 hover:h-[14vh] group relative'
+              className='cursor-pointer transition delay-300 group relative active:h-[14vh] md:hover:h-[14vh]'
             >
               <div
                 className='flex transition duration 
-              group-hover:opacity-90 delay-300 w-full justify-center'
+              group-hover:opacity-90 group-active:opacity-90 delay-300 w-full justify-center'
               >
                 <Image
                   src={`https://raw.githubusercontent.com/ratasi/images-netflix-clone/refs/heads/main/ranking/${movie.ranking}.png`}

@@ -18,10 +18,10 @@ export function InfoExtraFilm(props: InfoExtraFilmProps) {
   return (
     <div
       className='opacity-0 absolute top-0 transition-all duration-300 z-10
-  invisible sm:visible delay-300 w-full bg-zinc-900 rounded-lg scale-0 
-  group-hover:lg:scale-150 group-hover:md:scale-150  
-  group-hover:-translate-y-[5vw]
-  group-hover:opacity-100'
+  delay-300 w-full bg-zinc-900 rounded-lg scale-0 
+  group-active:scale-100 group-hover:scale-100 group-hover:md:scale-150 group-hover:lg:scale-150  
+  group-active:-translate-y-[5vw] group-hover:-translate-y-[5vw]
+  group-active:opacity-100 group-hover:opacity-100'
     >
       <div className='aspect-video'>
         <ReactPlayer
