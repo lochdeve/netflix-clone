@@ -35,13 +35,12 @@ export function LoginForm() {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      login(values).then((data) => {
-        setError(data?.error);
-        if (data?.success) {
-          toast.success('Login se ha realizado con éxito');
-        }
-      });
-      router.push('/profiles');
+      const data = await login(values);
+      setError(data?.error);
+      if (data?.success) {
+        toast.success('Login se ha realizado con éxito');
+        router.push('/profiles');
+      }
     } catch (error) {
       console.log(error);
     }

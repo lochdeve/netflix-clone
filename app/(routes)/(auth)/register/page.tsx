@@ -1,9 +1,17 @@
+import { auth } from '@/auth';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 import Terms from '../login/Terms/Terms';
 import { RegisterForm } from './RegisterForm';
 
-export default function RegisterPage() {
+export default async function RegisterPage() {
+  const session = await auth();
+
+  if (session?.user) {
+    redirect('/');
+  }
+
   return (
     <div>
       <p className='text-3xl font-bold text-left mb-7'>Registro de usuario</p>
