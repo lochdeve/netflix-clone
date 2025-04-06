@@ -10,10 +10,11 @@ const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 type InfoExtraFilmProps = {
   movie: PopularMovie;
+  isHovered: boolean;
 };
 
 export function InfoExtraFilm(props: InfoExtraFilmProps) {
-  const { movie } = props;
+  const { movie, isHovered } = props;
 
   return (
     <div
@@ -24,15 +25,17 @@ export function InfoExtraFilm(props: InfoExtraFilmProps) {
   group-active:opacity-100 group-hover:opacity-100'
     >
       <div className='aspect-video'>
-        <ReactPlayer
-          url={movie.trailerVideo}
-          loop={true}
-          width='100%'
-          height='100%'
-          playing={true}
-          muted={true}
-          controls={false}
-        />
+        {isHovered ? (
+          <ReactPlayer
+            url={movie.trailerVideo}
+            loop={true}
+            width='100%'
+            height='100%'
+            playing={true}
+            muted={true}
+            controls={false}
+          />
+        ) : null}
       </div>
 
       <div className='p-4 shadow-lg'>

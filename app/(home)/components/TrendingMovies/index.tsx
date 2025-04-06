@@ -1,5 +1,8 @@
+'use client';
+
 import { PopularMovie } from '@/prisma/types';
 import Image from 'next/image';
+import { useState } from 'react';
 import { InfoExtraFilm } from './InfoExtraFilm';
 // import { InfoExtraFilm } from './InfoExtraFilm';
 
@@ -9,6 +12,7 @@ type TrendingMoviesProps = {
 
 const TrendingMovies = (props: TrendingMoviesProps) => {
   const { movies } = props;
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className='pt-11 pb-18 lg:pb-0 lg:pt-0  md:-top-24 lg:-top-28 relative px-[4%]'>
@@ -22,6 +26,8 @@ const TrendingMovies = (props: TrendingMoviesProps) => {
             <div
               key={movie.id}
               className='cursor-pointer transition delay-300 group relative active:h-[14vh] md:hover:h-[14vh]'
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               <div
                 className='flex transition duration 
@@ -42,7 +48,7 @@ const TrendingMovies = (props: TrendingMoviesProps) => {
                   className='h-auto w-auto md:max-h-[180px] lg:max-h-full'
                 />
               </div>
-              <InfoExtraFilm movie={movie} />
+              <InfoExtraFilm movie={movie} isHovered={isHovered} />
             </div>
           ))}
         </div>
