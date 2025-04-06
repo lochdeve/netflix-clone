@@ -1,0 +1,81 @@
+.slick-list {
+  overflow: visible !important;
+  padding: 60px 0 !important; /* Aumentar el padding vertical */
+  margin: -60px 0 !important; /* Compensar el padding para mantener el layout */
+}
+
+/* Ajustar el contenedor de las tarjetas */
+.slick-slide {
+  position: relative;
+}
+
+/* Contenedor de la imagen principal */
+.card-content {
+  aspect-ratio: 16/9;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Centrar las flechas verticalmente con respecto a la imagen sin hover */
+.slick-prev,
+.slick-next {
+  height: 20px !important;
+  width: 20px !important;
+  top: 35% !important;
+  transform: translateY(30px) !important; /* Ajustar la posición vertical */
+  z-index: 50;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px !important;
+}
+
+.slick-prev {
+  left: -25px !important;
+}
+
+.slick-next {
+  right: -25px !important;
+}
+
+/* Contenido en hover */
+.hover-content {
+  position: absolute;
+  top: -20px;
+  left: -10%;
+  width: 120%;
+  z-index: 40;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Contenedor del contenido en hover */
+.hover-content > div {
+  position: relative;
+  padding-bottom: 10px; /* Asegurar espacio para el contenido inferior */
+}
+
+.slick-slide:hover .hover-content {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Asegurarse que el hover aparezca por encima */
+.slick-slide {
+  z-index: 1;
+}
+
+.slick-slide:hover {
+  z-index: 999;
+}
+
+/* Ajustar el contenedor del carousel */
+.carousel-container {
+  margin-bottom: 140px; /* Añadir espacio entre carouseles */
+}
