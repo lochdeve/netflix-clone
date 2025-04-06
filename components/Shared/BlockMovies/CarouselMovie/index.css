@@ -19,24 +19,31 @@
 /* Centrar las flechas verticalmente con respecto a la imagen sin hover */
 .slick-prev,
 .slick-next {
-  height: 20px !important;
-  width: 20px !important;
-  top: 35% !important;
-  transform: translateY(30px) !important; /* Ajustar la posición vertical */
+  height: 30px !important;
+  width: 30px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important; /* Centrar verticalmente */
   z-index: 50;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .slick-prev:before,
 .slick-next:before {
-  font-size: 30px !important;
+  font-size: 20px !important;
+  opacity: 1 !important;
+  position: static !important;
+  display: block !important;
 }
 
 .slick-prev {
-  left: -25px !important;
+  left: -15px !important;
 }
 
 .slick-next {
-  right: -25px !important;
+  right: -15px !important;
 }
 
 /* Contenido en hover */
@@ -78,4 +85,45 @@
 /* Ajustar el contenedor del carousel */
 .carousel-container {
   margin-bottom: 140px; /* Añadir espacio entre carouseles */
+  padding: 0 25px; /* Aumentar el padding para las flechas */
+}
+
+/* Contenedor wrapper para el carrusel */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible !important; /* Permitir que las flechas sean visibles */
+  padding: 0 10px; /* Añadir padding al wrapper */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    height: 25px !important;
+    width: 25px !important;
+    top: 50% !important;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px !important;
+  }
+
+  .slick-prev {
+    left: -5px !important;
+  }
+
+  .slick-next {
+    right: -5px !important;
+  }
+
+  .carousel-container {
+    padding: 0 15px; /* Reducir el padding en móviles */
+  }
+
+  .hover-content {
+    width: 110%; /* Reducir el ancho en móviles */
+    left: -5%;
+  }
 }
