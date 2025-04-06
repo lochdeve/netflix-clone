@@ -12,7 +12,7 @@ const TrendingMovies = (props: TrendingMoviesProps) => {
   console.log(movies);
 
   return (
-    <div className='pt-11 md:pt-0 md:-top-24 lg:-top-28 relative px-[4%]'>
+    <div className='pt-11 pb-18 lg:pb-0 lg:pt-0  md:-top-24 lg:-top-28 relative px-[4%]'>
       <h3 className='text-2xl font-semibold mb-3'>
         Las series más populares hoy en este país: España
       </h3>
