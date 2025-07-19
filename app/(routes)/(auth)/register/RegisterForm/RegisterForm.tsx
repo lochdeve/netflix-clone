@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { login } from '@/actions/login';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -34,7 +35,11 @@ export function RegisterForm() {
     try {
       await axios.post('/api/auth/register', values);
       toast.success('El usuario se ha registrado correctamente');
-      router.push('/profiles');
+      const dataLogin = await login(values);
+
+      if (dataLogin?.success) {
+        router.push('/profiles');
+      }
     } catch (error) {
       console.log(error);
       toast.error('Ha ocurrido un error al registrar el usuario');
