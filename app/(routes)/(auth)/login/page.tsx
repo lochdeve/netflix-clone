@@ -17,14 +17,15 @@ const LoginPage = async () => {
       <p className='text-3xl font-bold text-left mb-7'>Iniciar sesión</p>
 
       <LoginForm />
-      <div className='mt-5 text-center'>
+      {/* TODO: Add forgot password */}
+      {/* <div className='mt-5 text-center'>
         <Link
           href='/'
           className='text-neutral-400 hover:underline hover:text-white'
         >
           ¿Has olvidado la contraseña?
         </Link>
-      </div>
+      </div> */}
 
       <div className='flex items-center space-x-2 mt-4'>
         <Checkbox
